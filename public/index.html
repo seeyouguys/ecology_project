@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Динамика популяции</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="vue-app">
+
+        <section class="card">
+            <canvas id="graph" width="650" height="400"></canvas>
+        </section>
+
+        <section class="parameters card">
+            <!-- K -->
+            <label>
+                K = {{ k }}
+                <input type="range" 
+                min="1" 
+                max="350" 
+                step="1" 
+                v-model='k'
+                @input=recalcValues()>
+            </label>
+            
+            <!-- n -->
+            <label>
+                n = {{ n }}
+                <input type="range" 
+                min="1" 
+                max="350" 
+                step="1"  
+                v-model='n'
+                @input=recalcValues()> 
+            </label>
+            
+            <!-- r -->
+            <label>
+                r = {{ r }}
+                <input type="range" 
+                min="0.1" 
+                max="5" 
+                step="0.05" 
+                v-model='r'
+                @input=recalcValues()> 
+            </label>
+
+        </section>
+    </div>
+
+    <script src="/scripts/chart.js"></script>
+    <script src="/scripts/vue.js"></script>
+    <script src="/scripts/index-bundle.js"></script>
+</body>
+</html>
