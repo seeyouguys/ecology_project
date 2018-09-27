@@ -102,8 +102,7 @@ const vm = new Vue({
         },
         r() {
             this.rerenderChart()
-        },
-
+        }
     }
 })
 
@@ -143,3 +142,7 @@ var chart = new Chart(ctx, {
         }
     }
 })
+
+// выделить необходимую точку после загрузки страницы
+vm.highlightPoint(vm.pointToHighlight)
+chart.update()
